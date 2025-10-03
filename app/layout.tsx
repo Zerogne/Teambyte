@@ -1,27 +1,27 @@
-import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
-import { Suspense } from "react"
 import "./globals.css"
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+})
 
 export const metadata: Metadata = {
-  title: "Premium Agency - Built Fast. Built Right.",
-  description: "Dark premium freelancing agency landing page",
-  generator: "v0.app",
+  title: "Your Agency",
+  description: "A freelance agency website",
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        <Analytics />
+    <html lang="en">
+      <body className={`${montserrat.variable} font-montserrat bg-black text-white`}>
+        {children}
       </body>
     </html>
   )

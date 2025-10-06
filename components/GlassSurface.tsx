@@ -306,7 +306,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
       style={getContainerStyles()}
     >
       <svg
-        className="w-full h-full pointer-events-none absolute inset-0 opacity-0 -z-10"
+        className="w-full h-full pointer-events-none absolute inset-0 opacity-0 z-0"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -359,7 +359,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
         </defs>
       </svg>
 
-      <div className="w-full h-full flex items-center justify-center p-2 rounded-[inherit] relative z-10">
+      <div className="w-full h-full flex items-center justify-center p-2 rounded-[inherit] relative z-20">
         {children}
       </div>
     </div>

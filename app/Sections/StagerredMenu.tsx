@@ -28,12 +28,13 @@ export default function StaggerredMenu() {
         openMenuButtonColor="#000"
         changeMenuColorOnOpen={true}
         colors={['#B19EEF', '#5227FF']}
-        logoUrl="/light.svg"
+        logoUrl="/Light.png"
+        leftLogoUrl="/Dark.png"
         accentColor="#ff6b6b"
         isFixed={true}
         onMenuOpen={() => console.log('Menu opened')}
         onMenuClose={() => console.log('Menu closed')}
-        className='z-50'
+        className='relative'
       />
     </div>
   );

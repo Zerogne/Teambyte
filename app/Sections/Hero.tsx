@@ -9,7 +9,7 @@ import GradualBlur from '@/components/GradualBlur'
 export default function Hero() {
     return(
         <div className="w-full h-screen bg-black/20 flex flex-col justify-center items-center relative overflow-hidden">
-            <section className="beams w-full h-full absolute">
+            <section className="beams w-full h-full absolute z-0 pointer-events-none">
                 <Beams 
                 beamWidth={3}
                 beamHeight={30}
@@ -21,30 +21,36 @@ export default function Hero() {
                 rotation={30}         
                 />
             </section>
-            <div className="text-center relative">
-                {/* blue text */}
-                <aside className='flex flex-col items-center justify-center'>
-                    <BlurText
-                    text="Xperience"
-                    delay={100}
-                    animateBy="letters"
-                    direction="top"
-                    className="text-8xl mb-8 font-bold z-50"
-                    />
-                    <TextType 
-                    text={["Text typing effect", "for your websites", "Happy coding!"]}
-                    typingSpeed={75}
-                    pauseDuration={1500}
-                    showCursor={true}
-                    cursorCharacter="|"
-                    className='text-2xl mb-8 font-italic text-gray-400 z-50'
-                    />
-                </aside>
-                <div className="flex gap-3 justify-center items-center">
-                    <button className="bg-gradient-to-b from-white to-gray-100 text-gray-800 border border-gray-300 rounded-full px-6 py-2 text-lg font-normal cursor-pointer shadow-inner transition-all duration-300 min-w-[160px] h-12 flex items-center justify-center hover:from-gray-50 hover:to-gray-200 cursor-pointer z-50">
+             <div className="text-center relative z-20">
+                 {/* blue text */}
+                 <aside className='flex flex-col items-center justify-center'>
+                     <BlurText
+                     text="Xperience"
+                     delay={100}
+                     animateBy="letters"
+                     direction="top"
+                     className="text-8xl mb-8 font-bold relative z-20"
+                     />
+                     <TextType 
+                     text={["Text typing effect", "for your websites", "Happy coding!"]}
+                     typingSpeed={75}
+                     pauseDuration={1500}
+                     showCursor={true}
+                     cursorCharacter="|"
+                     className='text-2xl mb-8 font-italic text-gray-400 relative z-20'
+                     />
+                 </aside>
+                <div className="flex gap-3 justify-center items-center relative z-30">
+                    <button 
+                        onClick={() => window.location.href = '/projects'}
+                        className="bg-gradient-to-b from-white to-gray-100 text-gray-800 border border-gray-300 rounded-full px-6 py-2 text-lg font-normal cursor-pointer shadow-inner transition-all duration-300 min-w-[160px] h-12 flex items-center justify-center hover:from-gray-50 hover:to-gray-200 cursor-pointer"
+                    >
                         Get Started
                     </button>
-                    <button className="bg-white/5 backdrop-blur-sm text-gray-400 border border-gray-400/50 rounded-full px-6 py-2 text-lg font-normal cursor-pointer transition-all duration-300 min-w-[160px] h-12 flex items-center justify-center hover:bg-white/10 hover:text-white hover:border-gray-300 cursor-pointer z-50">
+                    <button 
+                        onClick={() => window.open('https://calendly.com/saranochir-s/30min?hide_gdpr_banner=1&month=2025-10', '_blank')}
+                        className="bg-white/5 backdrop-blur-sm text-gray-400 border border-gray-400/50 rounded-full px-6 py-2 text-lg font-normal cursor-pointer transition-all duration-300 min-w-[160px] h-12 flex items-center justify-center hover:bg-white/10 hover:text-white hover:border-gray-300 cursor-pointer"
+                    >
                         <ShinyText 
                             text="Learn More" 
                             disabled={false} 
@@ -55,7 +61,7 @@ export default function Hero() {
                 </div>
             </div>
             
-            <GradualBlur
+            {/* <GradualBlur
                 target="parent"
                 position="bottom"
                 height="8rem"
@@ -64,7 +70,7 @@ export default function Hero() {
                 curve="bezier"
                 exponential={true}
                 opacity={1}
-            />
+            /> */}
         </div>
     )
 }

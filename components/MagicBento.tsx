@@ -201,11 +201,16 @@ const ParticleCard: React.FC<{
   }, [initializeParticles]);
 
   useEffect(() => {
-    if (disableAnimations || !cardRef.current) return;
+    if (disableAnimations || !cardRef.current) {
+      console.log('ParticleCard useEffect skipped:', { disableAnimations, hasRef: !!cardRef.current });
+      return;
+    }
 
+    console.log('ParticleCard useEffect running - attaching event handlers');
     const element = cardRef.current;
 
     const handleMouseEnter = () => {
+      console.log('Mouse enter - starting effects');
       isHoveredRef.current = true;
       animateParticles();
 
@@ -489,10 +494,10 @@ const GlobalSpotlight: React.FC<{
 
 const BentoCardGrid: React.FC<{
   children: React.ReactNode;
-  gridRef?: React.RefObject<HTMLDivElement | null>;
+  gridRef?: React.RefObject<HTMLDivElement>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 max-w-[54rem] select-none relative"
+    className="bento-section grid gap-1 md:gap-2 p-2 md:p-3 max-w-[60rem] select-none relative"
     style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.5rem)' }}
     ref={gridRef}
   >
@@ -530,7 +535,20 @@ const MagicBento: React.FC<BentoProps> = ({
 }) => {
   const gridRef = useRef<HTMLDivElement>(null);
   const isMobile = useMobileDetection();
-  const shouldDisableAnimations = disableAnimations || isMobile;
+  const shouldDisableAnimations = disableAnimations;
+
+  // Debug logging
+  console.log('MagicBento props:', {
+    enableStars,
+    enableSpotlight,
+    enableBorderGlow,
+    disableAnimations,
+    enableTilt,
+    enableMagnetism,
+    clickEffect,
+    isMobile,
+    shouldDisableAnimations
+  });
 
   return (
     <>
@@ -565,7 +583,8 @@ const MagicBento: React.FC<BentoProps> = ({
           
           @media (min-width: 1024px) {
             .card-responsive {
-              grid-template-columns: repeat(4, 1fr);
+              grid-template-columns: repeat(3, 1fr);
+              max-width: 100%;
             }
             
             .card-responsive .card:nth-child(3) {
@@ -576,6 +595,17 @@ const MagicBento: React.FC<BentoProps> = ({
             .card-responsive .card:nth-child(4) {
               grid-column: 1 / span 2;
               grid-row: 2 / span 2;
+            }
+            
+            .card-responsive .card:nth-child(6) {
+              grid-column: 3;
+              grid-row: 3;
+            }
+          }
+          
+          @media (min-width: 1280px) {
+            .card-responsive {
+              grid-template-columns: repeat(4, 1fr);
             }
             
             .card-responsive .card:nth-child(6) {
@@ -655,7 +685,7 @@ const MagicBento: React.FC<BentoProps> = ({
             
             .card-responsive .card {
               width: 100%;
-              min-height: 180px;
+              min-height: 200px;
             }
           }
         `}
@@ -664,7 +694,7 @@ const MagicBento: React.FC<BentoProps> = ({
       {enableSpotlight && (
         <GlobalSpotlight
           gridRef={gridRef}
-          disableAnimations={shouldDisableAnimations}
+          disableAnimations={disableAnimations}
           enabled={enableSpotlight}
           spotlightRadius={spotlightRadius}
           glowColor={glowColor}
@@ -674,7 +704,7 @@ const MagicBento: React.FC<BentoProps> = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-responsive grid gap-2">
           {cardData.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[240px] w-full max-w-full p-4 md:p-6 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             }`;
 
@@ -689,12 +719,13 @@ const MagicBento: React.FC<BentoProps> = ({
             } as React.CSSProperties;
 
             if (enableStars) {
+              console.log('Using ParticleCard for card:', index);
               return (
                 <ParticleCard
                   key={index}
                   className={baseClassName}
                   style={cardStyle}
-                  disableAnimations={shouldDisableAnimations}
+                  disableAnimations={disableAnimations}
                   particleCount={particleCount}
                   glowColor={glowColor}
                   enableTilt={enableTilt}
@@ -702,14 +733,14 @@ const MagicBento: React.FC<BentoProps> = ({
                   enableMagnetism={enableMagnetism}
                 >
                   <div className="card__header flex justify-between gap-3 relative text-white">
-                    <span className="card__label text-base">{card.label}</span>
+                    <span className="card__label text-lg">{card.label}</span>
                   </div>
                   <div className="card__content flex flex-col relative text-white">
-                    <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                    <h3 className={`card__title font-normal text-lg m-0 mb-2 ${textAutoHide ? 'text-clamp-1' : ''}`}>
                       {card.title}
                     </h3>
                     <p
-                      className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}
+                      className={`card__description text-sm leading-6 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}
                     >
                       {card.description}
                     </p>
@@ -727,7 +758,7 @@ const MagicBento: React.FC<BentoProps> = ({
                   if (!el) return;
 
                   const handleMouseMove = (e: MouseEvent) => {
-                    if (shouldDisableAnimations) return;
+                    if (disableAnimations) return;
 
                     const rect = el.getBoundingClientRect();
                     const x = e.clientX - rect.left;
@@ -762,7 +793,7 @@ const MagicBento: React.FC<BentoProps> = ({
                   };
 
                   const handleMouseLeave = () => {
-                    if (shouldDisableAnimations) return;
+                    if (disableAnimations) return;
 
                     if (enableTilt) {
                       gsap.to(el, {
@@ -784,7 +815,7 @@ const MagicBento: React.FC<BentoProps> = ({
                   };
 
                   const handleClick = (e: MouseEvent) => {
-                    if (!clickEffect || shouldDisableAnimations) return;
+                    if (!clickEffect || disableAnimations) return;
 
                     const rect = el.getBoundingClientRect();
                     const x = e.clientX - rect.left;
@@ -834,13 +865,13 @@ const MagicBento: React.FC<BentoProps> = ({
                 }}
               >
                 <div className="card__header flex justify-between gap-3 relative text-white">
-                  <span className="card__label text-base">{card.label}</span>
+                  <span className="card__label text-lg">{card.label}</span>
                 </div>
                 <div className="card__content flex flex-col relative text-white">
-                  <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                  <h3 className={`card__title font-normal text-lg m-0 mb-2 ${textAutoHide ? 'text-clamp-1' : ''}`}>
                     {card.title}
                   </h3>
-                  <p className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
+                  <p className={`card__description text-sm leading-6 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
                     {card.description}
                   </p>
                 </div>

@@ -44,51 +44,46 @@ const logos = [
 ]
 export default function Projects(){
     return(
-        <div className="w-full min-h-screen bg-black/20 flex flex-col items-center justify-center py-16 px-4">
-            <div className="text-center max-w-4xl mb-12">
-                <SplitText
-                    text="Stuffs We have done"
-                    className="text-5xl font-bold text-center mb-6"
-                    delay={100}
-                    duration={0.2}
-                    ease="power3.out"
-                    splitType="words"
-                    from={{ opacity: 0, y: 40 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.1}
-                    rootMargin="-100px"
-                    textAlign="center"
-                />
-                <BlurText
-                    text="Explore our portfolio of innovative projects and creative solutions"
-                    delay={50}
-                    animateBy="words"
-                    direction="bottom"
-                    className="text-md text-gray-300 leading-relaxed"
-                />
-            </div>
+        <div className="w-full h-[90vh] bg-black/20 flex flex-col px-4 mt-8 bg-xp-bgSoft rounded-8xl">
             
-            {/* Gap between headline and logo sections */}
-            <div className="w-full h-16"></div>
-            
-            <div className="sections-container w-full h-auto flex items-center justify-center overflow-hidden">
-                {/* Text left side */}
-                <section className='text-white text-center w-1/2'>
-                    <p className='text-md text-gray-300 leading-relaxed mb-8 font-bold text-xl'> 
-                    Proudly collaborating with companies that inspire us.
-                    </p>
-                    <LogoLoop
-                        logos={logos}
-                        speed={120}
-                        direction="left"
-                        width="100%"
-                        logoHeight={48}
-                        gap={48}
-                        className="brightness-50 contrast-150 grayscale hover:brightness-75 transition-all duration-300"
-                    />
-                    
+            <div className="sections-container w-full flex-1 flex items-center justify-center overflow-hidden">
+                {/* Text left side */} 
+                <section className='text-white text-left w-1/2 flex flex-col justify-center px-4 ml-3'>
+                    <div className="text-left mb-8 w-full px-4 pt-8">
+                        <SplitText
+                            text="Stuffs We have done"
+                            className="text-5xl font-bold text-left mb-4"
+                            delay={100}
+                            duration={0.2}
+                            ease="power3.out"
+                            splitType="words"
+                            from={{ opacity: 0, y: 40 }}
+                            to={{ opacity: 1, y: 0 }}
+                            threshold={0.1}
+                            rootMargin="-100px"
+                            textAlign="left"
+                        />
+                        <BlurText
+                            text="Explore our portfolio of innovative projects and creative solutions"
+                            delay={50}
+                            animateBy="words"
+                            direction="bottom"
+                            className="text-md text-gray-300 leading-relaxed text-left text-lg"
+                        />
+                    </div>
+
+                        <LogoLoop
+                            logos={logos}
+                            speed={120}
+                            direction="left"
+                            width="100%"
+                            logoHeight={48}
+                            gap={48}
+                            className="brightness-50 contrast-150 grayscale hover:brightness-75 transition-all duration-300 mb-4"
+                        />
+                        
                     {/* Buttons below logo loop */}
-                    <div className="flex gap-3 justify-center items-center mt-8 relative z-50">
+                    <div className="flex gap-3 mt-6 relative z-50 w-full items-start justify-start">
                         <button 
                             onClick={() => window.location.href = '/projects'}
                             className="bg-gradient-to-b from-white to-gray-100 text-gray-800 border border-gray-300 rounded-full px-6 py-2 text-lg font-normal cursor-pointer shadow-inner transition-all duration-300 min-w-[160px] h-12 flex items-center justify-center hover:from-gray-50 hover:to-gray-200 cursor-pointer relative z-50"
@@ -109,41 +104,59 @@ export default function Projects(){
                     </div>
                 </section>
                 {/* Card right side */}
-                <section className='w-[600px] h-[600px] relative w-1/2 items-center justify-center'>
+                <section className='w-1/2 flex items-center justify-center'>
+                    <div className="w-[500px] h-[500px] relative">
                 <CardSwap
+                    fadeOutColor="#ffffff"
+                    ariaLabel="Technology partners"
+                    logos={logos}
+                    speed={10}
                     cardDistance={60}
                     verticalDistance={70}
-                    delay={5000}
+                    delay={8000}
                     pauseOnHover={false}
                 >
                     {/* Sunirse Mongolia */}
-                    <Card>
-                    <h3 className='text-white p-2'>Sunrise Mongolia </h3>
-                    <figure>
-                        <Image src={Sunrise} alt="Sunrise Mongolia" className='w-full h-full object-cover' />
-                    </figure>
+                    <Card className="overflow-hidden">
+                        <Image 
+                            src={Sunrise} 
+                            alt="Sunrise Mongolia" 
+                            className="w-full h-full object-cover" 
+                            fill
+                            sizes="500px"
+                        />
                     </Card>
                     {/* Win Academy */}
-                    <Card>
-                    <h3 className='text-white p-2'>Win-Academy</h3>
-                    <figure>
-                        <Image src={Win} alt="Sunrise Mongolia" className='w-full h-full object-cover' />
-                    </figure>
+                    <Card className="overflow-hidden">
+                        <Image 
+                            src={Win} 
+                            alt="Win Academy" 
+                            className="w-full h-full object-cover" 
+                            fill
+                            sizes="500px"
+                        />
                     </Card>
                     {/* New Era Platform */}
-                    <Card>
-                    <h3 className='text-white p-2'>New-Era </h3>
-                    <figure>
-                        <Image src={Newera} alt="Sunrise Mongolia" className='w-full h-full object-cover' />
-                    </figure>
+                    <Card className="overflow-hidden">
+                        <Image 
+                            src={Newera} 
+                            alt="New Era Platform" 
+                            className="w-full h-full object-cover" 
+                            fill
+                            sizes="500px"
+                        />
                     </Card>
-                    <Card>
-                        <h3 className='text-white p-2'>Han-Education</h3>
-                        <figure>
-                            <Image src={Hanedu} alt="Han-Education" className='w-full h-full object-cover' />
-                        </figure>
+                    <Card className="overflow-hidden">
+                        <Image 
+                            src={Hanedu} 
+                            alt="Han-Education" 
+                            className="w-full h-full object-cover" 
+                            fill
+                            sizes="500px"
+                        />
                     </Card>
                 </CardSwap>
+                    </div>
                 </section>
             </div>
 

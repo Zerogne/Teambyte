@@ -6,8 +6,8 @@ import GradualBlur from '@/components/GradualBlur'
 
 export default function Values() {
   return (
-    <section className="relative h-screen overflow-hidden">
-      <div className="h-full overflow-y-auto py-16 md:py-24 px-4 md:px-8">
+    <section className="relative min-h-screen overflow-hidden">
+      <div className="min-h-screen overflow-y-auto py-16 md:py-24 px-4 md:px-8">
         <div className="w-full min-h-screen bg-black/20 flex flex-col items-center justify-start">
           {/* Header Section */}
           <div className="text-center mb-8 md:mb-12 w-full h-16 md:h-20 flex items-center justify-center">
@@ -22,7 +22,7 @@ export default function Values() {
           </div>
           
           {/* Magic Bento Container */}
-          <div className="w-full max-w-6xl flex justify-center px-2 md:px-4">
+          <div className="w-full max-w-7xl flex justify-center px-2 md:px-4 mb-16">
             <MagicBento 
               textAutoHide={true}
               enableStars={true}

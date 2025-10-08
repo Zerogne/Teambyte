@@ -8,7 +8,7 @@ import { Facebook, Instagram, Mail } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="w-full bg-xp-bgSoft text-white isolate">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+      <div className="w-4/5 mx-auto px-6 py-12">
         {/* Top Row */}
         <div className="flex flex-col md:flex-row items-start justify-between gap-10">
           {/* Left Section - Logo & Contact */}

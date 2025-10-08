@@ -10,10 +10,10 @@ export default function Footer() {
     <footer className="w-full bg-xp-bgSoft text-white isolate">
       <div className="mx-auto max-w-7xl px-6 py-12">
         {/* Top Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-10">
           {/* Left Section - Logo & Contact */}
-          <div className="flex flex-col gap-4">
-            <div className="relative h-10 w-28">
+          <div className="flex flex-col md:flex-row items-start gap-6">
+            <div className="relative h-10 w-28 shrink-0">
               <Image
                 src={Logo}
                 alt="XP Digital Logo"
@@ -23,54 +23,56 @@ export default function Footer() {
               />
             </div>
 
-            <div className="space-y-1 text-sm text-gray-300">
-              <p>
-                Tel: <span className="text-white">80296007, 88163115</span>
-              </p>
-              <p>
-                Mail:{" "}
+            <div className="flex flex-col gap-4">
+              <div className="space-y-1 text-sm text-gray-300">
+                <p>
+                  Tel: <span className="text-white">80296007, 88163115</span>
+                </p>
+                <p>
+                  Mail:{" "}
+                  <a
+                    href="mailto:xperience.proydrs@gmail.com"
+                    className="hover:underline"
+                  >
+                    xperience.proydrs@gmail.com
+                  </a>
+                </p>
+              </div>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61578833769304"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:border-white/30 hover:bg-white/5 transition"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={18} />
+                </a>
+                <a
+                  href="https://www.instagram.com/xperience.proydrs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:border-white/30 hover:bg-white/5 transition"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={18} />
+                </a>
                 <a
                   href="mailto:xperience.proydrs@gmail.com"
-                  className="hover:underline"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:border-white/30 hover:bg-white/5 transition"
+                  aria-label="Email"
                 >
-                  xperience.proydrs@gmail.com
+                  <Mail size={18} />
                 </a>
-              </p>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-3">
-              <a
-                href="https://www.facebook.com/profile.php?id=61578833769304"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:border-white/30 hover:bg-white/5 transition"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="https://www.instagram.com/xperience.proydrs/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:border-white/30 hover:bg-white/5 transition"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="mailto:xperience.proydrs@gmail.com"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:border-white/30 hover:bg-white/5 transition"
-                aria-label="Email"
-              >
-                <Mail size={18} />
-              </a>
+              </div>
             </div>
           </div>
 
-          {/* Middle Section - Navigation (Inline) */}
-          <nav className="flex items-center justify-center md:justify-center">
-            <div className="flex flex-wrap justify-center gap-8 text-sm md:text-base">
+          {/* Middle Section - Navigation (Vertical) */}
+          <nav className="w-full md:w-auto">
+            <div className="flex flex-col gap-3 text-sm md:text-base">
               <Link href="/" className="text-gray-300 hover:text-white transition">
                 Home
               </Link>
@@ -87,7 +89,7 @@ export default function Footer() {
           </nav>
 
           {/* Right Section - Address (Left Aligned) */}
-          <div className="text-sm text-gray-300 text-start">
+          <div className="text-sm text-gray-300 text-start self-start">
             <p className="font-medium text-white">Xperience Agency</p>
             <p className="mt-1">Ulaanbaatar, Mongolia</p>
             <p className="mt-1">Building better web experiences.</p>

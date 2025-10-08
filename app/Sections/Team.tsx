@@ -76,9 +76,9 @@ export default function Team(){
             </div>
 
             <section className="w-full relative mt-16 pb-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8">
+                <div className="flex flex-wrap gap-y-8 gap-x-3 w-4/5 mx-auto">
                     {TEAM_MEMBERS.map((member) => (
-                        <div key={member.name} className="relative h-72 w-[85%] md:w-[80%] mx-auto rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-[0_-8px_24px_-10px_rgba(255,255,255,0.20),0_16px_32px_-12px_rgba(0,0,0,0.45)] hover:shadow-[0_-10px_28px_-12px_rgba(255,255,255,0.45),0_24px_40px_-12px_rgba(0,0,0,0.6)] transition-shadow">
+                        <div key={member.name} className="relative h-72 w-[85%] md:w-[49%] mx-auto md:mx-0 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-[0_-8px_24px_-10px_rgba(255,255,255,0.20),0_16px_32px_-12px_rgba(0,0,0,0.45)] hover:shadow-[0_-10px_28px_-12px_rgba(255,255,255,0.45),0_24px_40px_-12px_rgba(0,0,0,0.6)] transition-shadow">
                             <DotGrid
                                 className="opacity-40 pointer-events-none"
                                 dotSize={8}

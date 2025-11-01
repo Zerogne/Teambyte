@@ -27,7 +27,7 @@ function normalizeUrl(url?: string) {
 const TEAM_MEMBERS: TeamMember[] = [
     {
         name: "Bayarbayasgalan.U",
-        title: "PM · Lead Developer",
+        title: "Full Stack Developer, Leader",
         avatar: "https://images8.alphacoders.com/483/483462.png",
         links: {
             facebook: "https://www.facebook.com/profile.php?id=61581622687198",
@@ -49,12 +49,12 @@ const TEAM_MEMBERS: TeamMember[] = [
         avatar: "https://i.pinimg.com/736x/32/e5/48/32e548dda7f52ac3b5452a48aa57a5b2.jpg",
         links: { facebook: "https://www.facebook.com/share/17ZEwokgr5/?mibextid=wwXIfr" , instagram: "https://www.instagram.com/saraqakk?igsh=MW91N2s0Y2dzdW5jNA%3D%3D&utm_source=qr" } },
     { name: "Sanchirbold.L",
-         title: "",
+         title: "Researcher",
          avatar: "https://xp-hazel-eta.vercel.app/saran-ochir-profile.jpg",
          links: { facebook:"https://www.facebook.com/lkh.sanchir", instagram:"https://www.instagram.com/lkhsanchir/" } },
     {
         name: "Sukhbat.E",
-        title: "Researcher",
+        title: "Project Manager",
         avatar: "https://static.wikia.nocookie.net/disney/images/3/37/Profile_-_Simba.jpeg",
         links: {
             facebook: "https://www.facebook.com/Kaesamabn",

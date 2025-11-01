@@ -5,9 +5,9 @@ import { Facebook, Instagram, Mail } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="w-full bg-xp-bgSoft text-white isolate">
-      <div className="w-4/5 mx-auto px-6 py-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12">
         {/* Top Row */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-10">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-6 sm:gap-8 md:gap-10">
           {/* Left Section - Contact */}
           <div className="flex flex-col md:flex-row items-start gap-6">
             <div className="flex flex-col gap-4">
@@ -18,8 +18,8 @@ export default function Footer() {
                 <p>
                   Mail:{" "}
                   <a
-                    href="k2naysaa@gmail.com"
-                    className="hover:underline"
+                    href="mailto:k2naysaa@gmail.com"
+                    className="hover:underline break-all"
                   >
                     k2naysaa@gmail.com
                   </a>
@@ -70,7 +70,7 @@ export default function Footer() {
           </nav>
 
           {/* Right Section - Address (Left Aligned) */}
-          <div className="text-sm text-gray-300 text-start self-start">
+          <div className="text-sm text-gray-300 text-start self-start w-full md:w-auto">
             <p className="font-medium text-white">Team Byte</p>
             <p className="mt-1">Ulaanbaatar, Mongolia</p>
             <p className="mt-1">Building better web experiences.</p>
@@ -78,8 +78,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Row */}
-        <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-400">
+        <div className="mt-8 sm:mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-400 text-center sm:text-left">
             © 2025 Team Byte. All rights reserved.
           </p>
 

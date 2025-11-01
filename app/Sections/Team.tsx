@@ -65,11 +65,11 @@ const TEAM_MEMBERS: TeamMember[] = [
 
 export default function Team(){
     return(
-        <div id="team" className="w-full h-full rounded-8xl bg-transparent mt-12 flex flex-col px-12">
-            <div className="headline w-full h-auto flex flex-col items-center justify-center mt-24">
+        <div id="team" className="w-full h-full rounded-8xl bg-transparent mt-8 sm:mt-12 flex flex-col px-4 sm:px-6 md:px-12">
+            <div className="headline w-full h-auto flex flex-col items-center justify-center mt-12 sm:mt-16 md:mt-24">
                 <SplitText
                     text="Meet Our Team"
-                    className="text-4xl font-semibold text-center"
+                    className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center px-4"
                     delay={100}
                     duration={0.6}
                     ease="power3.out"
@@ -82,10 +82,10 @@ export default function Team(){
                 />
             </div>
 
-            <section className="w-full relative mt-16 pb-10">
-                <div className="flex flex-nowrap gap-x-6 w-full px-8 mx-auto">
+            <section className="w-full relative mt-8 sm:mt-12 md:mt-16 pb-0 sm:pb-4 md:pb-10">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 w-full px-2 sm:px-4 md:px-8 mx-auto">
                     {TEAM_MEMBERS.map((member) => (
-                        <div key={member.name} className="relative h-96 flex-1 min-w-0 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-[0_-8px_24px_-10px_rgba(255,255,255,0.20),0_16px_32px_-12px_rgba(0,0,0,0.45)] hover:shadow-[0_-10px_28px_-12px_rgba(255,255,255,0.45),0_24px_40px_-12px_rgba(0,0,0,0.6)] transition-shadow">
+                        <div key={member.name} className="relative h-80 sm:h-96 w-full sm:flex-1 sm:min-w-[calc(50%-12px)] md:min-w-0 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-[0_-8px_24px_-10px_rgba(255,255,255,0.20),0_16px_32px_-12px_rgba(0,0,0,0.45)] hover:shadow-[0_-10px_28px_-12px_rgba(255,255,255,0.45),0_24px_40px_-12px_rgba(0,0,0,0.6)] transition-shadow">
                             <DotGrid
                                 className="opacity-40 pointer-events-none"
                                 dotSize={8}
@@ -101,23 +101,23 @@ export default function Team(){
                             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-black/20 to-black/40" />
                             
                             {/* Name and Title at Top */}
-                            <div className="absolute top-4 left-4 right-4 flex items-center gap-3 z-[100]">
+                            <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center gap-2 sm:gap-3 z-[100]">
                                 {member.avatar && (
                                     <img
                                         src={member.avatar}
                                         alt={`${member.name} avatar`}
-                                        className="h-10 w-10 rounded-full border border-white/20 object-cover"
+                                        className="h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-white/20 object-cover flex-shrink-0"
                                     />
                                 )}
-                                <div className="flex flex-col gap-1">
-                                    <p className="text-xs uppercase tracking-wide text-white/70">{member.title}</p>
-                                    <h3 className="text-lg font-semibold text-white">{member.name}</h3>
+                                <div className="flex flex-col gap-0.5 sm:gap-1 min-w-0">
+                                    <p className="text-[10px] sm:text-xs uppercase tracking-wide text-white/70 truncate">{member.title}</p>
+                                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white truncate">{member.name}</h3>
                                 </div>
                             </div>
 
                             {/* Social Buttons at Bottom */}
                             {member.links && (
-                                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-start gap-2 z-[100]">
+                                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-start gap-1.5 sm:gap-2 z-[100]">
                                     {member.links.facebook && (
                                         <a href={normalizeUrl(member.links.facebook)} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex size-8 items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
                                             <Facebook className="size-4" />

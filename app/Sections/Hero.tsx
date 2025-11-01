@@ -8,7 +8,7 @@ import TextTrail from '@/components/TextTrail'
 import GradualBlur from '@/components/GradualBlur'
 export default function Hero() {
     return(
-        <div id="home" className="w-full h-screen bg-black/20 flex flex-col justify-center items-center relative overflow-hidden">
+        <div id="home" className="w-full min-h-screen h-screen bg-black/20 flex flex-col justify-center items-center relative overflow-hidden px-4">
             <section className="beams w-full h-full absolute z-0 pointer-events-none">
                 <Beams 
                 beamWidth={3}
@@ -21,7 +21,7 @@ export default function Hero() {
                 rotation={30}         
                 />
             </section>
-             <div className="text-center relative z-20">
+             <div className="text-center relative z-20 px-4">
                  {/* blue text */}
                  <aside className='flex flex-col items-center justify-center'>
                      <BlurText
@@ -29,7 +29,7 @@ export default function Hero() {
                      delay={100}
                      animateBy="letters"
                      direction="top"
-                     className="text-8xl mb-8 font-bold relative z-20"
+                     className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl mb-4 sm:mb-6 md:mb-8 font-bold relative z-20"
                      />
                      <TextType 
                      text={["Text typing effect", "for your websites", "Happy coding!"]}
@@ -37,19 +37,19 @@ export default function Hero() {
                      pauseDuration={1500}
                      showCursor={true}
                      cursorCharacter="|"
-                     className='text-2xl mb-8 font-italic text-gray-400 relative z-20'
+                     className='text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 font-italic text-gray-400 relative z-20 px-2'
                      />
                  </aside>
-                <div className="flex gap-3 justify-center items-center relative z-50">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center relative z-50 px-4 w-full max-w-md mx-auto">
                     <button 
                         onClick={() => window.location.href = '/projects'}
-                        className="bg-gradient-to-b from-white to-gray-100 text-gray-800 border border-gray-300 rounded-full px-6 py-2 text-lg font-normal cursor-pointer shadow-inner transition-all duration-300 min-w-[160px] h-12 flex items-center justify-center hover:from-gray-50 hover:to-gray-200 cursor-pointer relative z-50"
+                        className="bg-gradient-to-b from-white to-gray-100 text-gray-800 border border-gray-300 rounded-full px-6 py-2.5 text-base sm:text-lg font-normal cursor-pointer shadow-inner transition-all duration-300 w-full sm:w-auto sm:min-w-[160px] h-12 flex items-center justify-center hover:from-gray-50 hover:to-gray-200 cursor-pointer relative z-50"
                     >
                         Get Started
                     </button>
                     <button 
                         onClick={() => window.open('https://calendly.com/saranochir-s/30min?hide_gdpr_banner=1&month=2025-10', '_blank')}
-                        className="bg-white/5 backdrop-blur-sm text-gray-400 border border-gray-400/50 rounded-full px-6 py-2 text-lg font-normal cursor-pointer transition-all duration-300 min-w-[160px] h-12 flex items-center justify-center hover:bg-white/10 hover:text-white hover:border-gray-300 cursor-pointer relative z-50"
+                        className="bg-white/5 backdrop-blur-sm text-gray-400 border border-gray-400/50 rounded-full px-6 py-2.5 text-base sm:text-lg font-normal cursor-pointer transition-all duration-300 w-full sm:w-auto sm:min-w-[160px] h-12 flex items-center justify-center hover:bg-white/10 hover:text-white hover:border-gray-300 cursor-pointer relative z-50"
                     >
                         <ShinyText 
                             text="Learn More" 

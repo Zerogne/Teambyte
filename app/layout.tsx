@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { Montserrat } from 'next/font/google'
 
@@ -9,8 +9,14 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Your Agency",
-  description: "A freelance agency website",
+  title: "Team Byte",
+  description: "Building better web experiences",
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({

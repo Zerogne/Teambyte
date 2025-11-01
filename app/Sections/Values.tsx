@@ -6,23 +6,25 @@ import GradualBlur from '@/components/GradualBlur'
 
 export default function Values() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      <div className="min-h-screen overflow-y-auto py-16 md:py-24 px-4 md:px-8">
-        <div className="w-full min-h-screen bg-black/20 flex flex-col items-center justify-start">
+    <section className="relative overflow-hidden -mt-4 sm:mt-0">
+      <div className="overflow-y-auto py-2 sm:py-4 md:py-16 lg:py-24 px-4 md:px-8">
+        <div className="w-full bg-black/20 flex flex-col items-center justify-start">
           {/* Header Section */}
-          <div className="text-center mb-8 md:mb-12 w-full h-16 md:h-20 flex items-center justify-center">
-            <CurvedLoop 
-              marqueeText="We ✦ Are ✦ Passionate ✦ About ✦ Creating ✦ Beautiful ✦ and ✦ Functional ✦ Websites"
-              speed={4}
-              curveAmount={140}
-              direction="right"
-              interactive={true}
-              className="text-2xl md:text-4xl lg:text-6xl font-bold"
-            />
+          <div className="text-center mb-4 sm:mb-8 md:mb-12 w-full h-auto min-h-[120px] sm:min-h-[100px] md:h-20 flex items-center justify-center px-4">
+            <div className="scale-150 sm:scale-125 md:scale-100">
+              <CurvedLoop 
+                marqueeText="We ✦ Are ✦ Passionate ✦ About ✦ Creating ✦ Beautiful ✦ and ✦ Functional ✦ Websites"
+                speed={4}
+                curveAmount={140}
+                direction="right"
+                interactive={true}
+                className="text-5xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+              />
+            </div>
           </div>
           
           {/* Magic Bento Container */}
-          <div className="w-full max-w-7xl flex justify-center px-2 md:px-4 mb-16">
+          <div className="hidden md:flex w-full max-w-7xl justify-center px-4 sm:px-6 md:px-4 mb-8 sm:mb-12 md:mb-16">
             <MagicBento 
               textAutoHide={true}
               enableStars={true}

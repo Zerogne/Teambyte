@@ -9,10 +9,14 @@ import Footer from './Sections/Footer'
 export default function Home() {
   return (
     <>
-      <StaggeredMenu />
+    <div style={{ display: 'none' }}>
+        <StaggeredMenu />
+      </div>
       <Hero />
       <Values />
-      <Projects />
+      <div style={{ display: 'none' }}>
+        <Projects />
+      </div>
       <Team />
       <Footer /> 
     </>

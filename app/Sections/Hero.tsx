@@ -8,7 +8,7 @@ import TextTrail from '@/components/TextTrail'
 import GradualBlur from '@/components/GradualBlur'
 export default function Hero() {
     return(
-        <div className="w-full h-screen bg-black/20 flex flex-col justify-center items-center relative overflow-hidden">
+        <div id="home" className="w-full h-screen bg-black/20 flex flex-col justify-center items-center relative overflow-hidden">
             <section className="beams w-full h-full absolute z-0 pointer-events-none">
                 <Beams 
                 beamWidth={3}
@@ -25,7 +25,7 @@ export default function Hero() {
                  {/* blue text */}
                  <aside className='flex flex-col items-center justify-center'>
                      <BlurText
-                     text="Xperience"
+                     text="Team Byte"
                      delay={100}
                      animateBy="letters"
                      direction="top"

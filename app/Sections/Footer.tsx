@@ -1,8 +1,5 @@
 "use client"
-import Image from "next/image"
-import Link from "next/link"
 import React from "react"
-import Logo from "@/public/Dark.png"
 import { Facebook, Instagram, Mail } from "lucide-react"
 
 export default function Footer() {
@@ -11,30 +8,20 @@ export default function Footer() {
       <div className="w-4/5 mx-auto px-6 py-12">
         {/* Top Row */}
         <div className="flex flex-col md:flex-row items-start justify-between gap-10">
-          {/* Left Section - Logo & Contact */}
+          {/* Left Section - Contact */}
           <div className="flex flex-col md:flex-row items-start gap-6">
-            <div className="relative h-10 w-28 shrink-0">
-              <Image
-                src={Logo}
-                alt="XP Digital Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-
             <div className="flex flex-col gap-4">
               <div className="space-y-1 text-sm text-gray-300">
                 <p>
-                  Tel: <span className="text-white">80296007, 88163115</span>
+                  Tel: <span className="text-white">88014891</span>
                 </p>
                 <p>
                   Mail:{" "}
                   <a
-                    href="mailto:xperience.proydrs@gmail.com"
+                    href="k2naysaa@gmail.com"
                     className="hover:underline"
                   >
-                    xperience.proydrs@gmail.com
+                    k2naysaa@gmail.com
                   </a>
                 </p>
               </div>
@@ -73,24 +60,18 @@ export default function Footer() {
           {/* Middle Section - Navigation (Vertical) */}
           <nav className="w-full md:w-auto">
             <div className="flex flex-col gap-3 text-sm md:text-base">
-              <Link href="/" className="text-gray-300 hover:text-white transition">
+              <a href="#home" className="text-gray-300 hover:text-white transition cursor-pointer">
                 Home
-              </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white transition">
-                About
-              </Link>
-              <Link href="/projects" className="text-gray-300 hover:text-white transition">
-                Projects
-              </Link>
-              <Link href="/team" className="text-gray-300 hover:text-white transition">
+              </a>
+              <a href="#team" className="text-gray-300 hover:text-white transition cursor-pointer">
                 Our Team
-              </Link>
+              </a>
             </div>
           </nav>
 
           {/* Right Section - Address (Left Aligned) */}
           <div className="text-sm text-gray-300 text-start self-start">
-            <p className="font-medium text-white">Xperience Agency</p>
+            <p className="font-medium text-white">Team Byte</p>
             <p className="mt-1">Ulaanbaatar, Mongolia</p>
             <p className="mt-1">Building better web experiences.</p>
           </div>
@@ -99,7 +80,7 @@ export default function Footer() {
         {/* Bottom Row */}
         <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-400">
-            © 2025 Xperience Agency. All rights reserved.
+            © 2025 Team Byte. All rights reserved.
           </p>
 
           <div className="flex items-center gap-3">

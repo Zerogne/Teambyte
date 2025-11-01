@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .learn-more-btn {
   background: linear-gradient(to bottom, #3C3C3C, #282828);
   color: #AAAAAA;

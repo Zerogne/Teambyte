@@ -11,14 +11,14 @@ export default function Values() {
         <div className="w-full bg-black/20 flex flex-col items-center justify-start">
           {/* Header Section */}
           <div className="text-center mb-4 sm:mb-8 md:mb-12 w-full h-auto min-h-[120px] sm:min-h-[100px] md:h-20 flex items-center justify-center px-4">
-            <div className="scale-150 sm:scale-125 md:scale-100">
+            <div className="scale-150 sm:scale-125 md:scale-125 lg:scale-150 xl:scale-175">
               <CurvedLoop 
                 marqueeText="We ✦ Are ✦ Passionate ✦ About ✦ Creating ✦ Beautiful ✦ and ✦ Functional ✦ Websites"
                 speed={4}
                 curveAmount={140}
                 direction="right"
                 interactive={true}
-                className="text-5xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+                className="text-6xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl font-bold"
               />
             </div>
           </div>

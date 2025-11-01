@@ -17,6 +17,9 @@ const logos = [
                 src="https://scontent.fuln4-2.fna.fbcdn.net/v/t39.30808-6/336449135_541573588108369_4625709498080177844_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=5GgQR4Ih3SEQ7kNvwG27BCb&_nc_oc=AdmSGKFpGgLoPbiBfcmQpuGNsMrRauA-JJ3OpIt94-2y383gvNRvqsIMs_G6lNUu41s&_nc_zt=23&_nc_ht=scontent.fuln4-2.fna&_nc_gid=3aGivjU4BdR9C0vAR-peaA&oh=00_Aff4uuUbFSWpvBdcoEr9jA7HUZx13JDM2ldQAN9dPww9qg&oe=68E93B4F" 
                 alt="Amjilt" 
                 className="w-14 h-14 object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
             />
         ), 
         href: "" 
@@ -37,6 +40,9 @@ const logos = [
                 src="https://scontent.fuln4-3.fna.fbcdn.net/v/t39.30808-6/538269110_122138777612823754_8313131565109142136_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=fZHLmRLuIcwQ7kNvwHrzo2B&_nc_oc=AdnfkA18ZizXMOstOuwkDRThREpl4VsXllvtdbX3Y8hge_nkneUD0VCl-SUNolIPZzM&_nc_zt=23&_nc_ht=scontent.fuln4-3.fna&_nc_gid=8zVdihIZyMKwtdY-RDSfZg&oh=00_AffNBOwa1gWHYMrSdrMKjYW4ocWoNxzc7QrquOoPE8KNmg&oe=68E942C7" 
                 alt="Han Education" 
                 className="rounded-full w-16 h-16 object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
             />
         ), 
         href: "https://company3.com" 
@@ -107,10 +113,6 @@ export default function Projects(){
                 <section className='w-1/2 flex items-center justify-center'>
                     <div className="w-[500px] h-[500px] relative">
                 <CardSwap
-                    fadeOutColor="#ffffff"
-                    ariaLabel="Technology partners"
-                    logos={logos}
-                    speed={10}
                     cardDistance={60}
                     verticalDistance={70}
                     delay={8000}

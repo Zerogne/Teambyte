@@ -6,7 +6,7 @@ import GradualBlur from '@/components/GradualBlur'
 
 export default function Values() {
   return (
-    <section className="relative overflow-hidden -mt-4 sm:mt-0">
+    <section id="values" className="relative overflow-hidden -mt-4 sm:mt-0">
       <div className="overflow-y-auto py-2 sm:py-4 md:py-16 lg:py-24 px-4 md:px-8">
         <div className="w-full bg-black/20 flex flex-col items-center justify-start">
           {/* Header Section */}

@@ -42,13 +42,23 @@ export default function Hero() {
                  </aside>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center items-center relative z-50 px-4 w-full max-w-md mx-auto">
                     <button 
-                        onClick={() => window.location.href = '/projects'}
+                        onClick={() => {
+                            const teamSection = document.getElementById('team');
+                            if (teamSection) {
+                                teamSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
                         className="bg-gradient-to-b from-white to-gray-100 text-gray-800 border border-gray-300 rounded-full px-6 py-2.5 text-base sm:text-lg font-normal cursor-pointer shadow-inner transition-all duration-300 w-full sm:w-auto sm:min-w-[160px] h-12 flex items-center justify-center hover:from-gray-50 hover:to-gray-200 cursor-pointer relative z-50"
                     >
                         Get Started
                     </button>
                     <button 
-                        onClick={() => window.open('https://calendly.com/saranochir-s/30min?hide_gdpr_banner=1&month=2025-10', '_blank')}
+                        onClick={() => {
+                            const valuesSection = document.getElementById('values');
+                            if (valuesSection) {
+                                valuesSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
                         className="bg-white/5 backdrop-blur-sm text-gray-400 border border-gray-400/50 rounded-full px-6 py-2.5 text-base sm:text-lg font-normal cursor-pointer transition-all duration-300 w-full sm:w-auto sm:min-w-[160px] h-12 flex items-center justify-center hover:bg-white/10 hover:text-white hover:border-gray-300 cursor-pointer relative z-50"
                     >
                         <ShinyText 

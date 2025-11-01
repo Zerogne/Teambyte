@@ -11,9 +11,6 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Team Byte",
   description: "Building better web experiences",
-  icons: {
-    icon: '/favicon.ico',
-  },
 }
 
 export const viewport: Viewport = {
